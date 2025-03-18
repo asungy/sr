@@ -1,0 +1,32 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "micrograd"
+dynamic = ["version"]
+requires-python = ">=3.10"
+authors = [
+  { name = "asungy", email = "62207329+asungy@users.noreply.github.com" },
+]
+dependencies = [
+  "click",
+  "colorama",
+  "numpy",
+]
+
+[project.optional-dependencies]
+dev = [
+  "black",
+  "helix-jupyter-thing",
+  "jupyter",
+  "matplotlib",
+  "pyflakes",
+  "python-lsp-server",
+]
+
+[project.scripts]
+micrograd = "micrograd.main:main"
+
+[tool.hatch.version]
+path = "src/micrograd/__about__.py"
